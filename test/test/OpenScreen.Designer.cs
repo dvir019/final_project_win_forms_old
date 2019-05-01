@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.newProject = new System.Windows.Forms.LinkLabel();
+            this.openProject = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // newProject
@@ -42,11 +43,23 @@
             this.newProject.Text = "New Project";
             this.newProject.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newProject_LinkClicked);
             // 
+            // openProject
+            // 
+            this.openProject.AutoSize = true;
+            this.openProject.Location = new System.Drawing.Point(335, 139);
+            this.openProject.Name = "openProject";
+            this.openProject.Size = new System.Drawing.Size(69, 13);
+            this.openProject.TabIndex = 1;
+            this.openProject.TabStop = true;
+            this.openProject.Text = "Open Project";
+            this.openProject.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.openProject_LinkClicked);
+            // 
             // OpenScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.openProject);
             this.Controls.Add(this.newProject);
             this.Name = "OpenScreen";
             this.Text = "OpenScreen";
@@ -59,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel newProject;
+        private System.Windows.Forms.LinkLabel openProject;
     }
 }

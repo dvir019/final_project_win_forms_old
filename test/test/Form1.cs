@@ -25,12 +25,12 @@ namespace test
         {
             enterCounter = 0;
 
-            imageList1.Images.Add("py", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\test\test\Images\py.png"));
-            imageList1.Images.Add("folder", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\test\test\Images\folder.jpg"));
+            imageList1.Images.Add("py", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\py.png"));
+            imageList1.Images.Add("folder", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\folder.jpg"));
             folderTree.ImageList = imageList1;
 
             folderTree.Nodes.Clear();
-            DirectoryInfo di = new DirectoryInfo(@"C:\Users\Horim\Desktop\Semester_1");
+            DirectoryInfo di = new DirectoryInfo(Paths.folderPath);//(@"C:\Users\Horim\Desktop\Semester_1");
             folderTree.Nodes.Add(Create(di));
 
             //AutoCompleteStringCollection a = new AutoCompleteStringCollection();

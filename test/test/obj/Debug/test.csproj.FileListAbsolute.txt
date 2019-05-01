@@ -10,3 +10,15 @@ C:\Users\Horim\Desktop\win_forms\test\test\obj\Debug\test.exe
 C:\Users\Horim\Desktop\win_forms\test\test\obj\Debug\test.pdb
 C:\Users\Horim\Desktop\win_forms\test\test\obj\Debug\test.OpenScreen.resources
 C:\Users\Horim\Desktop\win_forms\test\test\obj\Debug\test.InputDialog.resources
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\bin\Debug\test.exe.config
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\bin\Debug\test.exe
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\bin\Debug\test.pdb
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.csprojAssemblyReference.cache
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.Form1.resources
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.InputDialog.resources
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.OpenScreen.resources
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.csproj.GenerateResource.cache
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.exe
+C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\obj\Debug\test.pdb
