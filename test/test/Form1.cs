@@ -79,6 +79,7 @@ namespace test
 
             //}
             CheckKeyword("while", Color.Aqua, 0);
+            richTextBox1.AutoSize = true;
         }
         private void CheckKeyword(string word, Color color, int startIndex)
         {
@@ -313,12 +314,6 @@ namespace test
 
         }
 
-        private void heyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InputDialog i = new InputDialog(folderTree.SelectedNode.FullPath, FileTypes.Python);
-            DialogResult result = i.ShowDialog();
-        }
-
         private void folderTree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             folderTree.SelectedNode = e.Node;
@@ -326,11 +321,11 @@ namespace test
             {
                 if (folderTree.SelectedNode.FullPath.EndsWith(".py"))
                 {
-                    contextMenuStrip2.Show(folderTree, new Point(e.X, e.Y));
+                    fileMenuStrip.Show(folderTree, new Point(e.X, e.Y));
                 }
                 else
                 {
-                    contextMenuStrip1.Show(folderTree, new Point(e.X, e.Y));
+                    folderMenuStrip.Show(folderTree, new Point(e.X, e.Y));
                 }
             }
         }
@@ -371,6 +366,41 @@ namespace test
 
 
         }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            richTextBox1.Height = Height - richTextBox1.Location.Y-30;
+            richTextBox1.Width = Width - richTextBox1.Location.X-50;
+
+        }
+
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string pathToSelectedFolder = Path.Combine(Directory.GetParent(Paths.folderPath).ToString(), folderTree.SelectedNode.FullPath);
+            string newFileName = InputDialog.NewInput(pathToSelectedFolder, FileTypes.Python);
+            if (newFileName!=null)
+                File.Create(Path.Combine(pathToSelectedFolder, newFileName));
+        }
+
+        private void newFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string pathToSelectedFolder = Path.Combine(Directory.GetParent(Paths.folderPath).ToString(), folderTree.SelectedNode.FullPath);
+            string newFolderName = InputDialog.NewInput(pathToSelectedFolder, FileTypes.Folder);
+            if (newFolderName != null)
+                Directory.CreateDirectory(Path.Combine(pathToSelectedFolder, newFolderName));
+        }
+
+        
     }
     class A : CommonDialog
     {
@@ -404,5 +434,22 @@ namespace test
             //throw new NotImplementedException();
             return true;
         }
+    }
+    public class MyTextBox : TextBox
+    {
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool CreateCaret(IntPtr hWnd, IntPtr hBitmap, int nWidth, int nHeight);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool ShowCaret(IntPtr hWnd);
+
+        protected override void OnGotFocus(System.EventArgs e)
+        {
+            CreateCaret(this.Handle, IntPtr.Zero, 3, 11);
+            ShowCaret(this.Handle);
+            base.OnGotFocus(e);
+        }
+
     }
 }

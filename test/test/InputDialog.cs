@@ -88,6 +88,14 @@ namespace test
         {
             
         }
+
+        public static string NewInput(string path, FileTypes fileType)
+        {
+            InputDialog inputDialog = new InputDialog(path, fileType);
+            if (inputDialog.ShowDialog() == DialogResult.OK)
+                return inputDialog.Input;
+            return null;
+        }
     }
 
     public enum FileTypes
