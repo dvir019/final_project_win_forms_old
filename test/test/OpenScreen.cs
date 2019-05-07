@@ -37,6 +37,7 @@ namespace test
                     string pathNewFolder = Path.Combine(path, i.Input);
                     Directory.CreateDirectory(pathNewFolder);
                     Paths.folderPath = pathNewFolder;
+                    Paths.parenFolderPath = Directory.GetParent(pathNewFolder).ToString();
                     Hide();
                     //Dispose();
                     Form1 f = new Form1();
@@ -52,6 +53,7 @@ namespace test
             if (folderBrowser.ShowDialog()== DialogResult.OK)
             {
                 Paths.folderPath = folderBrowser.SelectedPath;
+                Paths.parenFolderPath = Directory.GetParent(folderBrowser.SelectedPath).ToString();
                 Hide();
                 //Dispose();
                 Form1 f = new Form1();

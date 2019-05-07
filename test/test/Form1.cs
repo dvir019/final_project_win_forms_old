@@ -386,7 +386,7 @@ namespace test
 
         private void newFileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string pathToSelectedFolder = Path.Combine(Directory.GetParent(Paths.folderPath).ToString(), folderTree.SelectedNode.FullPath);
+            string pathToSelectedFolder = Path.Combine(Paths.parenFolderPath, folderTree.SelectedNode.FullPath);
             string newFileName = InputDialog.NewInput(pathToSelectedFolder, FileTypes.Python);
             if (newFileName!=null)
                 File.Create(Path.Combine(pathToSelectedFolder, newFileName));
@@ -394,7 +394,7 @@ namespace test
 
         private void newFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string pathToSelectedFolder = Path.Combine(Directory.GetParent(Paths.folderPath).ToString(), folderTree.SelectedNode.FullPath);
+            string pathToSelectedFolder = Path.Combine(Paths.parenFolderPath, folderTree.SelectedNode.FullPath);
             string newFolderName = InputDialog.NewInput(pathToSelectedFolder, FileTypes.Folder);
             if (newFolderName != null)
                 Directory.CreateDirectory(Path.Combine(pathToSelectedFolder, newFolderName));
