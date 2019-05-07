@@ -100,7 +100,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\folder.jpg" />
+    <Content Include="Images\folder.png" />
     <Content Include="Images\openFolder.png" />
     <Content Include="Images\py.png" />
   </ItemGroup>

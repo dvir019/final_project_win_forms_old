@@ -25,9 +25,11 @@ namespace test
         {
             enterCounter = 0;
 
-            imageList1.Images.Add("py", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\py.png"));
-            imageList1.Images.Add("folder", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\folder.jpg"));
-            folderTree.ImageList = imageList1;
+            //treeImages.Images.Add("py", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\py.png"));
+            //treeImages.Images.Add("folder", Image.FromFile(@"C:\Users\Horim\Desktop\win_forms\final_project_win_forms\test\test\Images\folder.jpg"));
+
+            folderTree.ImageList = treeImages;
+
 
             folderTree.Nodes.Clear();
             DirectoryInfo di = new DirectoryInfo(Paths.folderPath);//(@"C:\Users\Horim\Desktop\Semester_1");
@@ -289,6 +291,8 @@ namespace test
                     //t.TreeView.ImageList = imageList1;
                     //t.ImageKey = "fol46der";
                     t.ImageIndex = 2;
+                    t.SelectedImageIndex = 2;
+                    
                     
                     //t.SelectedImageIndex = 46;
                     tree.Nodes.Add(t);
@@ -400,7 +404,17 @@ namespace test
                 Directory.CreateDirectory(Path.Combine(pathToSelectedFolder, newFolderName));
         }
 
-        
+        private void folderTree_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            e.Node.ImageIndex = 1;
+            e.Node.SelectedImageIndex = 1;
+        }
+
+        private void folderTree_AfterCollapse(object sender, TreeViewEventArgs e)
+        {
+            e.Node.ImageIndex = 0;
+            e.Node.SelectedImageIndex = 0;
+        }
     }
     class A : CommonDialog
     {
